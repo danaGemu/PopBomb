@@ -17,10 +17,12 @@ var playButton = me.ObjectEntity.extend(
         onMouseDown: function () {
             me.state.change(me.state.PLAY);
             console.log("klik");
+            //me.game.remove(this, true);
         },
 
         onDestroyEvent: function () {
-            me.input.releaseMouseEvent("mousedown", this);
+            me.input.releaseMouseEvent("mousedown", this.collisionBox);
+            
         }
 
     });

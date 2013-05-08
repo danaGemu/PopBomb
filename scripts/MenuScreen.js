@@ -11,7 +11,7 @@ var MenuScreen = me.ScreenObject.extend(
         onResetEvent: function () {
             this.title = me.loader.getImage("title");
             this.play = new playButton(240,150);
-            //this.play.x = 480 / 2;
+            
 
             me.game.add(this.play);
         },
@@ -23,7 +23,7 @@ var MenuScreen = me.ScreenObject.extend(
 
         onDestroyEvent: function () {
             me.game.remove(this.title);
-            me.game.remove(this.play);
+            me.game.remove(this.play, true);
         }
     });
 
