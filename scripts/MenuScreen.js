@@ -10,7 +10,7 @@ var MenuScreen = me.ScreenObject.extend(
 
         onResetEvent: function () {
             this.title = me.loader.getImage("title");
-            this.play = new playButton(240,150);
+            this.play = new playButton(140,240);
             
 
             me.game.add(this.play);

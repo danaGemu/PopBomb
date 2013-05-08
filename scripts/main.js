@@ -10,7 +10,7 @@ var resources = [
 var game = 
     {
         onload: function () {
-            if (!me.video.init("PopBomb", 480, 300)) {
+            if (!me.video.init("PopBomb", 320, 460)) {
                 alert("Sorry but your browser does not support html 5 canvas. Please try with another one!");
                 return;
             }
