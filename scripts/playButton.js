@@ -5,8 +5,8 @@ var playButton = me.ObjectEntity.extend(
         init: function (x, y) {
             var settings = {};
             settings.image = "play";
-            settings.spritewidth = 40;
-            settings.spriteheight = 40;
+            settings.spritewidth = 78;
+            settings.spriteheight = 36;
             this.parent(x, y, settings);
             //this.parent(x, y , me.loader.getImage("play"), 40, 40);
 

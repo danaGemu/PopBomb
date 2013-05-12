@@ -6,12 +6,27 @@ var PlayScreen = me.ScreenObject.extend(
             this.parent(true, true);
             this.title = null;
             this.play = null;
+            this.bg = null;
+            this.sprote = null;
+            
         },
 
         onResetEvent: function () {
             this.title = me.loader.getImage("troll");
-            //this.play = new playButton(240, 150);
-            //this.play.x = 480 / 2;
+            
+            this.play = new tesAtlas(150, 300);
+            me.game.add(this.play, 2);
+            
+            this.bg = new BackgroundLayer("bg");
+            me.game.add(this.bg, 1);
+            
+            //this.sprote = new tesSprite(50, 30);
+            //me.game.add(this.sprote, 3);
+            
+            this.sprote = new spritefleet();
+            me.game.add(this.sprote, 10);
+            
+            me.game.sort();
 
             //me.game.add(this.play);
             console.log("enter playscreen");
@@ -19,11 +34,11 @@ var PlayScreen = me.ScreenObject.extend(
 
         draw: function (context) {
             context.drawImage(this.title, (me.video.getWidth() / 2 - this.title.width / 2), 100);
-            //this.play.draw(context);
+            
         },
 
         onDestroyEvent: function () {
-            //me.game.remove(this.title);
+            me.game.remove(this.title);
             me.game.remove(this.play, true);
         }
     });

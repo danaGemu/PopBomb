@@ -3,14 +3,14 @@
 var MenuScreen = me.ScreenObject.extend(
     {
         init: function () {
-            this.parent(true, true);
+            this.parent(true);
             this.title = null;
             this.play = null;
         },
 
         onResetEvent: function () {
             this.title = me.loader.getImage("title");
-            this.play = new playButton(140,240);
+            this.play = new playButton(120,240);
             
 
             me.game.add(this.play);
