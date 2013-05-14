@@ -14,7 +14,7 @@ var resources = [
 var game = 
     {
         onload: function () {
-            if (!me.video.init("atlas", 320, 480, true, 'auto', true)) {
+            if (!me.video.init("PopBomb", 320, 480, true, 'auto', true)) {
                 alert("Sorry but your browser does not support html 5 canvas. Please try with another one!");
                 return;
             }
@@ -25,7 +25,7 @@ var game =
             me.loader.onload = this.loaded.bind(this);
             me.loader.preload(resources);
 
-            //me.state.set(me.state.LOADING, new CustomLoading());
+            me.state.set(me.state.LOADING, new CustomLoading());
             me.state.change(me.state.LOADING);
 
         },
@@ -36,6 +36,7 @@ var game =
             //me.state.set(me.state.GAMEOVER, new GameOverScreen());
             
             me.entityPool.add("tesSprite", tesSprite, true);
+            me.entityPool.add("tes2", tesSprite2, true);
 
             //me.entityPool.add(
 

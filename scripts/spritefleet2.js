@@ -1,4 +1,4 @@
-var spritefleet = Object.extend(
+var spritefleet2 = Object.extend(
 {
 	/*
 	 * constructor
@@ -17,13 +17,13 @@ var spritefleet = Object.extend(
 	update: function()
 	{
 		// every 1/12 second
-		if ((this.fps++) % 80 == 0)
+		if ((this.fps++) % 200 == 0)
 		{
 			var y = -30; //me.video.getHeight() + 10;
 			var x = Number.prototype.random(0, this.maxX) * 10;
 
 			// add an enemy
-			me.game.add(me.entityPool.newInstanceOf("tesSprite", x , y), 10);
+			me.game.add(me.entityPool.newInstanceOf("tes2", x , y), 10);
             //console.log("created from pool");
 			me.game.sort();
             

@@ -8,6 +8,10 @@ var PlayScreen = me.ScreenObject.extend(
             this.play = null;
             this.bg = null;
             this.sprote = null;
+            this.sprote2 = null;
+            this.timePassed = null;
+            
+            this.munculZombie = false;
             
         },
 
@@ -26,16 +30,21 @@ var PlayScreen = me.ScreenObject.extend(
             this.sprote = new spritefleet();
             me.game.add(this.sprote, 10);
             
+            this.sprote2 = new spritefleet2();
+            me.game.add(this.sprote2, 10);
+            
             me.game.sort();
 
             //me.game.add(this.play);
             console.log("enter playscreen");
+            
         },
 
         draw: function (context) {
             context.drawImage(this.title, (me.video.getWidth() / 2 - this.title.width / 2), 100);
             
         },
+        
 
         onDestroyEvent: function () {
             me.game.remove(this.title);
