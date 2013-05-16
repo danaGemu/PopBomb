@@ -89,9 +89,9 @@ var CustomLoading = me.ScreenObject.extend({
 
         // draw the progress bar
         context.strokeStyle = "silver";
-        context.strokeRect(0, ypos, me.video.getWidth(), 15);
+        context.strokeRect(0, ypos, me.video.getWidth(), 10);
         context.fillStyle = "#FF9A00";
-        context.fillRect(2, ypos + 2, progress - 4, 12);
+        context.fillRect(2, ypos + 2, progress - 4, 7);
     }
 
 });

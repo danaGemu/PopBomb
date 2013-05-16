@@ -14,7 +14,7 @@ var resources = [
 var game = 
     {
         onload: function () {
-            if (!me.video.init("PopBomb", 320, 480, true, 'auto', true)) {
+            if (!me.video.init("PopBomb", 320, 480, true, 1.0, true)) {
                 alert("Sorry but your browser does not support html 5 canvas. Please try with another one!");
                 return;
             }
@@ -41,6 +41,9 @@ var game =
             //me.entityPool.add(
 
             me.state.transition("fade", "#000000", 250);
+
+            //me.debug.renderHitbox = true;
+            //me.debug.displayFPS =  true;
 
             me.state.change(me.state.MENU);
         }

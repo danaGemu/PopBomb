@@ -24,14 +24,8 @@ var PlayScreen = me.ScreenObject.extend(
             this.bg = new BackgroundLayer("bg");
             me.game.add(this.bg, 1);
             
-            //this.sprote = new tesSprite(50, 30);
-            //me.game.add(this.sprote, 3);
-            
             this.sprote = new spritefleet();
             me.game.add(this.sprote, 10);
-            
-            this.sprote2 = new spritefleet2();
-            me.game.add(this.sprote2, 10);
             
             me.game.sort();
 
@@ -45,6 +39,21 @@ var PlayScreen = me.ScreenObject.extend(
             
         },
         
+        update: function()
+        {
+            this.timePassed++;
+
+            if (this.timePassed / 60 == 20) {
+                this.addSecondEnemy();
+            }
+            //console.log(this.timePassed / 60);
+        },
+
+        addSecondEnemy: function()
+        {
+            this.sprote2 = new spritefleet2();
+            me.game.add(this.sprote2, 10);
+        },
 
         onDestroyEvent: function () {
             me.game.remove(this.title);
